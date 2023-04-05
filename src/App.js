@@ -1,3 +1,6 @@
+import { Amplify, Auth } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -10,6 +13,8 @@ import MappingDetails from "./pages/MappingDetails";
 import SiteOrgDetails from "./pages/SiteOrgDetails";
 import ClinicalLocation from "./pages/clinical-location/ClinicalLocation";
 import Login from "./pages/outside/Login";
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
 const router = createBrowserRouter([
   {
     path: "/",
